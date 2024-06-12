@@ -20,16 +20,16 @@
     "require": {
         "php": "^8.0|^8.1|^8.2",
         "lakm/laravel-comments": "dev-main",
-        "laravel/framework": "^10.0|^11.0"
+        "laravel/framework": "^10.0|^11.0",
+        "filament/notifications": "3.x-dev",
+        "filament/tables": "^3.2"
     },
     "require-dev": {
         "larastan/larastan": "2.x-dev",
         "orchestra/testbench": "8.x-dev",
         "pestphp/pest": "^2.34",
         "pestphp/pest-plugin-laravel": "^2.3",
-        "pestphp/pest-plugin-livewire": "^2.1",
-        "filament/notifications": "3.x-dev",
-        "filament/tables": "^3.2"
+        "pestphp/pest-plugin-livewire": "^2.1"
     },
     "autoload": {
         "psr-4": {
