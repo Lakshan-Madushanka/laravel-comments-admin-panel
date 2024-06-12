@@ -19,10 +19,10 @@
     ],
     "require": {
         "php": "^8.0|^8.1|^8.2",
-        "filament/notifications": "3.x-dev",
-        "filament/tables": "^3.2",
         "lakm/laravel-comments": "dev-main",
-        "laravel/framework": "^10.0|^11.0"
+        "laravel/framework": "^10.0|^11.0",
+        "filament/notifications": "^3.2",
+        "filament/tables": "^3.2"
     },
     "require-dev": {
         "larastan/larastan": "2.x-dev",
