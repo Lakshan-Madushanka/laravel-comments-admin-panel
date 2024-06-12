@@ -73,7 +73,7 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../public/vendor/lakm/comments-admin-panel' => public_path('vendor/lakm/comments-admin-panel')
-        ], 'public');
+        ], 'comments-admin-panel-assets');
 
         $this->publishes([
             __DIR__ . '/../resources' => public_path('vendor/comments-admin-panel')
