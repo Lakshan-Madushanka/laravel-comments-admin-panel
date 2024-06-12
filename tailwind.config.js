@@ -1,4 +1,4 @@
-import filamentPreset from './filament.preset.js'
+import filamentPreset from './vendor/filament/support/tailwind.config.preset.js'
 
 export default {
     presets: [filamentPreset],
