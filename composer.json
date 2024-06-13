@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php": "^8.0|^8.1|^8.2",
+        "php": "^8.1|^8.2|^8.3",
         "lakm/laravel-comments": "dev-main",
         "laravel/framework": "^10.0|^11.0",
         "filament/notifications": "^3.2",
