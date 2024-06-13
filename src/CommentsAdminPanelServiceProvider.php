@@ -11,6 +11,7 @@ use LakM\Comments\AdminPanel\Livewire\Admin\ModelList;
 use LakM\Comments\AdminPanel\Livewire\Admin\ReplyForm;
 use LakM\Comments\AdminPanel\Livewire\Admin\ReplyList;
 use LakM\Comments\AdminPanel\Livewire\Admin\Sidebar;
+use LakM\Comments\AdminPanel\Console\InstallCommand;
 use Livewire\Livewire;
 
 
@@ -24,6 +25,7 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
         $this->setViews();
         $this->setComponents();
         $this->setBladeDirectives();
+        $this->registerCommands();
     }
 
     public function register(): void
@@ -63,6 +65,15 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
             $url = $this->getStyleUrl();
             return "<link rel='stylesheet' href='{$url}'>";
         });
+    }
+
+    protected function registerCommands(): void
+    {
+        if($this->app->runningInConsole()) {
+            $this->commands([
+                InstallCommand::class,
+            ]);
+        }
     }
 
     public function configPublishing(): void
