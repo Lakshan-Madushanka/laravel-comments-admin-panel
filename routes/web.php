@@ -8,16 +8,6 @@ use LakM\Comments\AdminPanel\Livewire\Admin\Dashboard;
 use LakM\Comments\AdminPanel\Livewire\Admin\ModelList;
 use LakM\Comments\AdminPanel\Livewire\Admin\ReplyForm;
 use LakM\Comments\AdminPanel\Livewire\Admin\ReplyList;
-use LakM\Comments\Models\Reply;
-
-$user1 = User::query()->createOrFirst(['email' => 'lak'],
-    ['name' => 'lak2', 'password' => 'password', 'email' => 'lak']);
-
-if (!Auth::check()) {
-    Auth::login($user1);
-}
-
-
 
 $prefix = config('comments-admin-panel.routes.prefix');
 
