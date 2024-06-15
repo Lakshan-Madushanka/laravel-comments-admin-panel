@@ -7,7 +7,7 @@ return [
         'routes' => [
             'middlewares' => [
                 'web',
-                AdminPanelAccessMiddleware::class,
+                AdminPanelAccessMiddleware::class, // Removing this, allow users to access admin panel if enabled is set to true !
             ],
             'prefix' => 'admin',
         ],
