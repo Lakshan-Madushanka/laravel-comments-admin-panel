@@ -12,7 +12,7 @@
 [Customization](#customization) |
 [Changelog](#changelog) |
 [Security](#security) |
-[License](#license) |
+[License](#license)
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Lakshan-Madushanka/laravel-comments-admin-panel/tests.yml)](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/actions?query=workflow%3ATests+branch%3Amain)
 [![Packagist Version](https://img.shields.io/packagist/v/lakm/laravel-comments-admin-panel)](https://packagist.org/packages/lakm/laravel-comments-admin-panel)
