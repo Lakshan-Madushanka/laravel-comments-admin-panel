@@ -1,16 +1,14 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Livewire\Admin;
+namespace LakM\CommentsAdminPanel\Livewire\Admin;
 
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables\Actions\Action;
-use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Foundation\Application;
@@ -21,15 +19,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use LakM\Comments\Actions\DeleteCommentAction;
 use LakM\Comments\Models\Comment;
 use LakM\Comments\Models\Reply;
-use LakM\Comments\Repository;
+use LakM\CommentsAdminPanel\Repository;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Locked;
-use Livewire\Attributes\On;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 class ReplyList extends Component implements HasTable, HasForms
 {
@@ -100,7 +94,7 @@ class ReplyList extends Component implements HasTable, HasForms
 
     private function query(): HasMany
     {
-        return \LakM\Comments\AdminPanel\Repository::repliesOf($this->comment);
+        return Repository::repliesOf($this->comment);
     }
 
     private function addReactionColumns(): array

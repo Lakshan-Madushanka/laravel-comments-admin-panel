@@ -1,6 +1,6 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Console;
+namespace LakM\CommentsAdminPanel\Console;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Helper\SymfonyQuestionHelper;

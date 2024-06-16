@@ -1,9 +1,8 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Tests\Fixtures;
+namespace LakM\CommentsAdminPanel\Tests\Fixtures;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use LakM\Comments\Concerns\Commenter;
 
 class User extends Authenticatable
 {

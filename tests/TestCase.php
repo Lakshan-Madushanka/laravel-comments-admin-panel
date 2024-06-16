@@ -1,11 +1,11 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Tests;
+namespace LakM\CommentsAdminPanel\Tests;
 
 
 use Filament\Notifications\NotificationsServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
-use LakM\Comments\AdminPanel\CommentsAdminPanelServiceProvider;
+use LakM\CommentsAdminPanel\CommentsAdminPanelServiceProvider;
 use LakM\Comments\CommentServiceProvider;
 use Livewire\LivewireServiceProvider;
 use function Pest\Laravel\withoutExceptionHandling;

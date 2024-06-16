@@ -1,6 +1,6 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Livewire\Admin;
+namespace LakM\CommentsAdminPanel\Livewire\Admin;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;

@@ -1,17 +1,17 @@
 <?php
 
-namespace LakM\Comments\AdminPanel;
+namespace LakM\CommentsAdminPanel;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use LakM\Comments\AdminPanel\Livewire\Admin\CommentForm;
-use LakM\Comments\AdminPanel\Livewire\Admin\CommentList;
-use LakM\Comments\AdminPanel\Livewire\Admin\Dashboard;
-use LakM\Comments\AdminPanel\Livewire\Admin\ModelList;
-use LakM\Comments\AdminPanel\Livewire\Admin\ReplyForm;
-use LakM\Comments\AdminPanel\Livewire\Admin\ReplyList;
-use LakM\Comments\AdminPanel\Livewire\Admin\Sidebar;
-use LakM\Comments\AdminPanel\Console\InstallCommand;
+use LakM\CommentsAdminPanel\Livewire\Admin\CommentList;
+use LakM\CommentsAdminPanel\Livewire\Admin\Dashboard;
+use LakM\CommentsAdminPanel\Livewire\Admin\ModelList;
+use LakM\CommentsAdminPanel\Livewire\Admin\ReplyForm;
+use LakM\CommentsAdminPanel\Livewire\Admin\ReplyList;
+use LakM\CommentsAdminPanel\Livewire\Admin\Sidebar;
+use LakM\CommentsAdminPanel\Console\InstallCommand;
 use Livewire\Livewire;
 
 

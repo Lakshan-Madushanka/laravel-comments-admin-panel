@@ -1,6 +1,6 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Middleware;
+namespace LakM\CommentsAdminPanel\Middleware;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;

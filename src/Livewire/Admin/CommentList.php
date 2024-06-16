@@ -1,6 +1,6 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Livewire\Admin;
+namespace LakM\CommentsAdminPanel\Livewire\Admin;
 
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use LakM\Comments\AdminPanel\Repository;
+use LakM\CommentsAdminPanel\Repository;
 use LakM\Comments\Models\Comment;
 use Livewire\Attributes\Layout;
 use Livewire\Component;

@@ -33,18 +33,18 @@
     },
     "autoload": {
         "psr-4": {
-            "LakM\\Comments\\AdminPanel\\": "src/"
+            "LakM\\CommentsAdminPanel\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LakM\\Comments\\AdminPanel\\Tests\\": "tests/"
+            "LakM\\CommentsAdminPanel\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LakM\\Comments\\AdminPanel\\CommentsAdminPanelServiceProvider"
+                "LakM\\CommentsAdminPanel\\CommentsAdminPanelServiceProvider"
             ]
         }
     },

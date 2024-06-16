@@ -1,6 +1,6 @@
 <?php
 
-namespace LakM\Comments\AdminPanel;
+namespace LakM\CommentsAdminPanel;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
