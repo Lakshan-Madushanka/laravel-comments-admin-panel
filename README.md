@@ -4,6 +4,16 @@
 
 ***Admin panel for the [commenter](https://github.com/Lakshan-Madushanka/laravel-comments)***
 
+[Description](#description) |
+[Requirements](#requirements) |
+[Installation](#installation) |
+[Usage](#usage) |
+[Config](#config) |
+[Customization](#customization) |
+[Changelog](#changelog) |
+[Security](#security) |
+[License](#license) |
+
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Lakshan-Madushanka/laravel-comments-admin-panel/tests.yml)](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/actions?query=workflow%3ATests+branch%3Amain)
 [![Packagist Version](https://img.shields.io/packagist/v/lakm/laravel-comments-admin-panel)](https://packagist.org/packages/lakm/laravel-comments-admin-panel)
 [![GitHub License](https://img.shields.io/github/license/Lakshan-Madushanka/laravel-comments-admin-panel)](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/blob/main/LICENSE.md)
