@@ -1,10 +1,10 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Livewire\Admin\Concerns;
+namespace LakM\CommentsAdminPanel\Livewire\Admin\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
-use LakM\Comments\AdminPanel\Repository;
+use LakM\CommentsAdminPanel\Repository;
 use LakM\Comments\Concerns\Commentable;
 
 trait HasCommentableModels

@@ -5,17 +5,10 @@ namespace LakM\CommentsAdminPanel\Livewire\Admin;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
-use LakM\Comments\Actions\DeleteCommentAction;
-use LakM\Comments\AdminPanel\Livewire\Admin\Concerns\HasCommentableModels;
-use LakM\Comments\Models\Comment;
-use LakM\Comments\Repository;
+use LakM\CommentsAdminPanel\Livewire\Admin\Concerns\HasCommentableModels;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Locked;
-use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 #[Title('Dashboard - Comments')]
 class Dashboard extends Component

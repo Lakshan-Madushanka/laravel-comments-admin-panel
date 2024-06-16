@@ -1,6 +1,6 @@
 <?php
 
-namespace LakM\Comments\AdminPanel\Livewire\Admin;
+namespace LakM\CommentsAdminPanel\Livewire\Admin;
 
 use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\RichEditor;

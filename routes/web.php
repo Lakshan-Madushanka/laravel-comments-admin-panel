@@ -2,12 +2,12 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use LakM\Comments\AdminPanel\Livewire\Admin\CommentForm;
-use LakM\Comments\AdminPanel\Livewire\Admin\CommentList;
-use LakM\Comments\AdminPanel\Livewire\Admin\Dashboard;
-use LakM\Comments\AdminPanel\Livewire\Admin\ModelList;
-use LakM\Comments\AdminPanel\Livewire\Admin\ReplyForm;
-use LakM\Comments\AdminPanel\Livewire\Admin\ReplyList;
+use LakM\CommentsAdminPanel\Livewire\Admin\CommentForm;
+use LakM\CommentsAdminPanel\Livewire\Admin\CommentList;
+use LakM\CommentsAdminPanel\Livewire\Admin\Dashboard;
+use LakM\CommentsAdminPanel\Livewire\Admin\ModelList;
+use LakM\CommentsAdminPanel\Livewire\Admin\ReplyForm;
+use LakM\CommentsAdminPanel\Livewire\Admin\ReplyList;
 
 $prefix = config('comments-admin-panel.routes.prefix');
 
