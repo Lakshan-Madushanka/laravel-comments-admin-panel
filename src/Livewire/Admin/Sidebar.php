@@ -5,14 +5,7 @@ namespace LakM\CommentsAdminPanel\Livewire\Admin;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use LakM\Comments\AdminPanel\Livewire\Admin\Concerns\HasCommentableModels;
-use LakM\Comments\Concerns\Commentable;
-use LakM\Comments\Models\Comment;
-use LakM\Comments\Repository;
-use LakM\Comments\Tests\Fixtures\User;
+use LakM\CommentsAdminPanel\Livewire\Admin\Concerns\HasCommentableModels;
 use Livewire\Component;
 
 class Sidebar extends Component

@@ -4,7 +4,7 @@ namespace LakM\CommentsAdminPanel;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use LakM\Comments\AdminPanel\Livewire\Admin\CommentForm;
+use LakM\CommentsAdminPanel\Livewire\Admin\CommentForm;
 use LakM\CommentsAdminPanel\Livewire\Admin\CommentList;
 use LakM\CommentsAdminPanel\Livewire\Admin\Dashboard;
 use LakM\CommentsAdminPanel\Livewire\Admin\ModelList;

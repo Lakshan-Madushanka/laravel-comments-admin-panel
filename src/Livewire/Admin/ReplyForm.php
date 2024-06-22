@@ -2,9 +2,7 @@
 
 namespace LakM\CommentsAdminPanel\Livewire\Admin;
 
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -14,14 +12,8 @@ use GrahamCampbell\Security\Facades\Security;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use LakM\Comments\Concerns\Commentable;
 use LakM\Comments\Models\Comment;
 use LakM\Comments\Models\Reply;
-use LakM\Comments\Repository;
-use LakM\Comments\Tests\Fixtures\User;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
