@@ -14,7 +14,6 @@ use LakM\CommentsAdminPanel\Livewire\Admin\Sidebar;
 use LakM\CommentsAdminPanel\Console\InstallCommand;
 use Livewire\Livewire;
 
-
 class CommentsAdminPanelServiceProvider extends ServiceProvider
 {
     public const MANIFEST_PATH = __DIR__ . '/../public/build/manifest.json';

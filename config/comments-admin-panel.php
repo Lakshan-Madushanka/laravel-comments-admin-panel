@@ -1,6 +1,7 @@
 <?php
 
-use LakM\Comments\AdminPanel\Middleware\AdminPanelAccessMiddleware;
+
+use LakM\CommentsAdminPanel\Middleware\AdminPanelAccessMiddleware;
 
 return [
         'enabled' => true,
