@@ -4,6 +4,7 @@ namespace LakM\CommentsAdminPanel;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use LakM\CommentsAdminPanel\Console\InstallCommand;
 use LakM\CommentsAdminPanel\Livewire\Admin\CommentForm;
 use LakM\CommentsAdminPanel\Livewire\Admin\CommentList;
 use LakM\CommentsAdminPanel\Livewire\Admin\Dashboard;
@@ -11,7 +12,6 @@ use LakM\CommentsAdminPanel\Livewire\Admin\ModelList;
 use LakM\CommentsAdminPanel\Livewire\Admin\ReplyForm;
 use LakM\CommentsAdminPanel\Livewire\Admin\ReplyList;
 use LakM\CommentsAdminPanel\Livewire\Admin\Sidebar;
-use LakM\CommentsAdminPanel\Console\InstallCommand;
 use Livewire\Livewire;
 
 class CommentsAdminPanelServiceProvider extends ServiceProvider
@@ -29,7 +29,7 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/comments-admin-panel.php', 'comments-admin-panel');
+        $this->mergeConfigFrom(__DIR__ . '/../config/comments-admin-panel.php', 'comments-admin-panel');
 
         $this->configPublishing();
     }
@@ -68,7 +68,7 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
 
     protected function registerCommands(): void
     {
-        if($this->app->runningInConsole()) {
+        if ($this->app->runningInConsole()) {
             $this->commands([
                 InstallCommand::class,
             ]);
@@ -78,7 +78,7 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
     public function configPublishing(): void
     {
         $this->publishes([
-            __DIR__.'/../config/comments-admin-panel.php' => config_path('comments.php')
+            __DIR__ . '/../config/comments-admin-panel.php' => config_path('comments.php')
         ], 'comments-admin-panel-config');
 
         $this->publishes([

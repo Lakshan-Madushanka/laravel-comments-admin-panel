@@ -4,14 +4,14 @@ namespace LakM\CommentsAdminPanel\Livewire\Admin\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
-use LakM\CommentsAdminPanel\Repository;
 use LakM\Comments\Concerns\Commentable;
+use LakM\CommentsAdminPanel\Repository;
 
 trait HasCommentableModels
 {
     public function getModels(string $modelPath): array
     {
-        $models = $this->loadModels( $modelPath);
+        $models = $this->loadModels($modelPath);
         $this->setCommentCount($models);
 
         return $models;
@@ -20,7 +20,7 @@ trait HasCommentableModels
     private function loadModels(string $path, array &$models = []): array
     {
         foreach (new \DirectoryIterator($path) as $file) {
-            if($file->isDot()) {
+            if ($file->isDot()) {
                 continue;
             }
 
@@ -30,12 +30,12 @@ trait HasCommentableModels
 
             if (($ext = $file->getExtension()) === 'php') {
                 $basePath = str_replace(app_path(), '', $file->getPathName());
-                $namespace = str_replace('.'. $ext, '', 'App' . $basePath);
+                $namespace = str_replace('.' . $ext, '', 'App' . $basePath);
 
                 if (is_subclass_of($namespace, Model::class) && Arr::has(class_uses($namespace), Commentable::class)) {
                     $key = str($namespace)->afterLast('App\\Models\\')->studly()->value();
                     $models[$key]['count'] = 0;
-                    $models[$key]['instance'] = new $namespace;
+                    $models[$key]['instance'] = new $namespace();
                 }
             }
         }

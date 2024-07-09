@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use LakM\CommentsAdminPanel\Livewire\Admin\CommentForm;
 use LakM\CommentsAdminPanel\Livewire\Admin\CommentList;
@@ -15,7 +14,6 @@ Route::middleware([...config('comments-admin-panel.routes.middlewares')])
     ->prefix($prefix)
     ->name('admin.')
     ->group(function () {
-
         Route::get('comments/dashboard', Dashboard::class)
             ->name('comments.dashboard');
 
@@ -34,5 +32,4 @@ Route::middleware([...config('comments-admin-panel.routes.middlewares')])
         Route::get('{modelName}/{modelId}/comments/{comment}/replies/{reply}/edit', ReplyForm::class)
             ->name('comments.replies.edit')
             ->scopeBindings();
-
     });

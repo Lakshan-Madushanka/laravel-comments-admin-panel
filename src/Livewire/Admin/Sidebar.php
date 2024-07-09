@@ -42,5 +42,4 @@ class Sidebar extends Component
     {
         return view('comments-admin-panel::livewire.admin.sidebar');
     }
-
 }

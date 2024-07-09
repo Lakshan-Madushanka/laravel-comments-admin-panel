@@ -18,8 +18,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use LakM\CommentsAdminPanel\Repository;
 use LakM\Comments\Models\Comment;
+use LakM\CommentsAdminPanel\Repository;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -39,7 +39,7 @@ class CommentList extends Component implements HasTable, HasForms
     public function table(Table $table): Table
     {
         return $table
-            ->query(fn() => $this->query())
+            ->query(fn () => $this->query())
             ->columns([
                 TextColumn::make('id')
                     ->label('Comment Id'),
@@ -53,7 +53,7 @@ class CommentList extends Component implements HasTable, HasForms
                     ->label('is_approved'),
                 TextColumn::make('score')
                     ->toggleable()
-                    ->getStateUsing(fn(Comment $record) => $this->calcScore($record))
+                    ->getStateUsing(fn (Comment $record) => $this->calcScore($record))
                     ->sortable(query: function (Builder $query, string $direction) {
                         return $query->orderBy(
                             DB::raw('reactions_count - (dislikes_count * 2) + (replies_count * 2) + reply_reactions_count - (reply_reactons_dislikes_count * 2)'),
@@ -79,14 +79,14 @@ class CommentList extends Component implements HasTable, HasForms
             ])
             ->actions([
                 Action::make('Replies')
-                    ->url(fn(Model $record) => route('admin.comments.replies.index', [
+                    ->url(fn (Model $record) => route('admin.comments.replies.index', [
                         'comment' => $record->getKey(),
                         'modelName' => Str::plural($this->modelName),
                         'modelId' => $this->model->getKey(),
                     ]))
                     ->icon('heroicon-m-chat-bubble-left-ellipsis'),
                 Action::make('Edit')
-                    ->url(fn(Model $record) => route('admin.comments.edit', [
+                    ->url(fn (Model $record) => route('admin.comments.edit', [
                         'modelName' => Str::plural($this->modelName),
                         'modelId' => $this->model->getKey(),
                         'comment' => $record->getKey(),
@@ -118,7 +118,7 @@ class CommentList extends Component implements HasTable, HasForms
         $reactions = [];
 
         foreach (config('comments.reactions') as $key => $value) {
-            $reactions[] = TextColumn::make(Str::plural($key).'_count')
+            $reactions[] = TextColumn::make(Str::plural($key) . '_count')
                 ->toggleable()
                 ->sortable();
         }

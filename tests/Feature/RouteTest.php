@@ -3,6 +3,7 @@
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
+
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
@@ -19,7 +20,6 @@ it('can throw 404 status when disable routes', function () {
 
     get(\route('admin.comments.dashboard'))
         ->assertStatus(404);
-
 })->throws(AuthorizationException::class);
 
 it('can throw 404 status production mode', function () {
@@ -27,13 +27,12 @@ it('can throw 404 status production mode', function () {
 
     get(\route('admin.comments.dashboard'))
         ->assertStatus(404);
-
 })->throws(AuthorizationException::class);
 
 it('can allows to access when canAccessAdminPanel method returns true', function () {
     app()['env'] = 'production';
 
-    $user = new class extends User {
+    $user = new class () extends User {
         public function canAccessAdminPanel(): bool
         {
             return true;

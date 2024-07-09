@@ -21,7 +21,6 @@ use Livewire\Component;
 
 class ModelList extends Component implements HasForms, HasTable
 {
-
     use InteractsWithTable;
     use InteractsWithForms;
 
@@ -50,7 +49,7 @@ class ModelList extends Component implements HasForms, HasTable
             ->query($this->query())
             ->columns([
                 TextColumn::make('commentable_id')
-                    ->label($this->modelName.' Id')
+                    ->label($this->modelName . ' Id')
                     ->searchable(query: function (Builder $query, string $search) {
                         return $query->where('commentable_id', $search);
                     }, isIndividual: true),
@@ -63,7 +62,7 @@ class ModelList extends Component implements HasForms, HasTable
             ])
             ->actions([
                 Action::make('comments')
-                    ->url(fn(Model $record) => route('admin.models.comments.show', [
+                    ->url(fn (Model $record) => route('admin.models.comments.show', [
                         'modelName' => $this->name,
                         'id' => $record->commentable_id,
                     ]))
@@ -81,8 +80,8 @@ class ModelList extends Component implements HasForms, HasTable
                 return str($val)->studly();
             });
 
-        $modelName = 'App\\Models\\'.Str::singular($modelName->implode('\\'));
-        $this->model = new $modelName;
+        $modelName = 'App\\Models\\' . Str::singular($modelName->implode('\\'));
+        $this->model = new $modelName();
     }
 
     private function setModelName(string $name): void

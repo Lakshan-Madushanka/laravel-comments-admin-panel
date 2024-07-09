@@ -2,18 +2,17 @@
 
 namespace LakM\CommentsAdminPanel\Tests;
 
-
 use Filament\Notifications\NotificationsServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
-use LakM\CommentsAdminPanel\CommentsAdminPanelServiceProvider;
 use LakM\Comments\CommentServiceProvider;
+use LakM\CommentsAdminPanel\CommentsAdminPanelServiceProvider;
 use Livewire\LivewireServiceProvider;
+
 use function Pest\Laravel\withoutExceptionHandling;
 use function Pest\Laravel\withoutVite;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-
     protected function setUp(): void
     {
         parent::setUp();

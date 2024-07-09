@@ -24,7 +24,7 @@ class AdminPanelAccessMiddleware
      */
     public function isAdminPanelAccessible(): bool
     {
-        if (! config('comments-admin-panel.enabled')) {
+        if (!config('comments-admin-panel.enabled')) {
             $this->throwException();
         }
 
