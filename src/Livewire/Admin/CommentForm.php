@@ -56,7 +56,7 @@ class CommentForm extends Component implements HasForms
 
     public function save(): void
     {
-        if($this->comment->fill($this->form->getState())->save()) {
+        if ($this->comment->fill($this->form->getState())->save()) {
             Notification::make()
                 ->title('Comment edited successfully')
                 ->success()
@@ -69,5 +69,4 @@ class CommentForm extends Component implements HasForms
     {
         return view('comments-admin-panel::livewire.admin.comment-form');
     }
-
 }

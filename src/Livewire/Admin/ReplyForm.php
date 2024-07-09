@@ -67,5 +67,4 @@ class ReplyForm extends Component implements HasForms
     {
         return view('comments-admin-panel::livewire.admin.reply-form');
     }
-
 }

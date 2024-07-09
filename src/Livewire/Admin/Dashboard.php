@@ -28,7 +28,7 @@ class Dashboard extends Component
 
     public function isGuestMode(string $namespace)
     {
-        return (new $namespace)->guestModeEnabled();
+        return (new $namespace())->guestModeEnabled();
     }
 
     #[Layout('comments-admin-panel::layouts.admin')]

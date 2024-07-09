@@ -41,7 +41,7 @@ class ReplyList extends Component implements HasTable, HasForms
     public function table(Table $table): Table
     {
         return $table
-            ->query(fn() => $this->query())
+            ->query(fn () => $this->query())
             ->columns([
                 TextColumn::make('id')
                     ->label('Reply Id'),
@@ -52,7 +52,7 @@ class ReplyList extends Component implements HasTable, HasForms
                 ToggleColumn::make('approved')
                     ->label('is_approved'),
                 TextColumn::make('score')
-                    ->getStateUsing(fn(Model $record) => $this->calcScore($record))
+                    ->getStateUsing(fn (Model $record) => $this->calcScore($record))
                     ->sortable(query: function (Builder $query, string $direction) {
                         return $query->orderBy(
                             DB::raw('reactions_count - (dislikes_count * 2)'),
@@ -69,7 +69,7 @@ class ReplyList extends Component implements HasTable, HasForms
             ])
             ->actions([
                 Action::make('Edit')
-                    ->url(fn(Model $record) => route('admin.comments.replies.edit', [
+                    ->url(fn (Model $record) => route('admin.comments.replies.edit', [
                         'reply' => $record->getKey(),
                         'comment' => $this->comment->getKey(),
                         'modelName' => $this->modelName,
@@ -80,7 +80,7 @@ class ReplyList extends Component implements HasTable, HasForms
                     ->icon('heroicon-m-trash')
                     ->color('danger')
                     ->requiresConfirmation()
-                    ->action(fn(Reply $record) => $record->delete()),
+                    ->action(fn (Reply $record) => $record->delete()),
             ])
             ->bulkActions([
                 // ...
@@ -102,7 +102,7 @@ class ReplyList extends Component implements HasTable, HasForms
         $reactions = [];
 
         foreach (config('comments.reactions') as $key => $value) {
-            $reactions[] = TextColumn::make(Str::plural($key).'_count')->sortable();
+            $reactions[] = TextColumn::make(Str::plural($key) . '_count')->sortable();
         }
 
         return $reactions;
@@ -110,7 +110,7 @@ class ReplyList extends Component implements HasTable, HasForms
 
     private function setModel(string $modelName, mixed $id): void
     {
-        $modelName = 'App\\Models\\'.str($modelName)->singular()->studly();
+        $modelName = 'App\\Models\\' . str($modelName)->singular()->studly();
 
         $this->model = $modelName::find($id);
     }

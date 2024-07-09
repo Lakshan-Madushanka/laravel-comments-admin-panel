@@ -4,7 +4,6 @@ namespace LakM\CommentsAdminPanel;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use LakM\Comments\Model as M;
 use LakM\Comments\Models\Comment;
@@ -66,5 +65,4 @@ class Repository
         }
         return $count;
     }
-
 }
