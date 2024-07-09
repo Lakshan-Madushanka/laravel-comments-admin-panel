@@ -41,7 +41,7 @@ Provides an ideal admin panel to manage the [Commenter package](https://github.c
 ```
 
 ```bash
-    composer commenter-admin-panel:install
+    php artisan commenter-admin-panel:install
 ```
 
 **Optional**
