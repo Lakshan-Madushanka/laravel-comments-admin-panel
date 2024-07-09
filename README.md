@@ -41,7 +41,7 @@ Provides an ideal admin panel to manage the [Commenter package](https://github.c
 ```
 
 ```bash
-    composer commenter-admin-panel:install
+    php artisan commenter-admin-panel:install
 ```
 
 **Optional**
@@ -156,7 +156,7 @@ You can build assets using any assets building tool. By default, package has use
 Make sure to use right build directory `public\vendor\lakm\comments-admin-panel\build`
 
 > [!Important]
-> When buiding assets the re should be only one input file and that is should be `app.js`.
+> When building assets the re should be only one input file and that is should be `app.js`.
 > You can do that as following using vite.
 
  ```js
