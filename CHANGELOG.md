@@ -1,5 +1,9 @@
 # Documentation of the changes
 
+## 1.0.1 - 2024-07-27
+- Make composer dependencies stable
+- [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.0.0...1.0.1)
+
 ## 1.0.0 - 2024-07-10
 First Stable Release
 
