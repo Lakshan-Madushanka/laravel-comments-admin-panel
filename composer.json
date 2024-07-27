@@ -58,6 +58,6 @@
             "pestphp/pest-plugin": true
         }
     },
-	"prefer-stable": false,
+	"prefer-stable": true,
     "minimum-stability": "stable"
 }
