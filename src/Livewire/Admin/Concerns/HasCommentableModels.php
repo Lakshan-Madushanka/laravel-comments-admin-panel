@@ -3,8 +3,8 @@
 namespace LakM\CommentsAdminPanel\Livewire\Admin\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
-use LakM\Comments\Concerns\Commentable;
+use Illuminate\Support\Str;
+use LakM\Comments\Contracts\CommentableContract;
 use LakM\CommentsAdminPanel\Repository;
 
 trait HasCommentableModels
@@ -25,15 +25,16 @@ trait HasCommentableModels
             }
 
             if ($file->isDir()) {
-                $this->loadModels(app_path("\\Models\\{$file->getFileName()}"), $models);
+                $root = Str::after($path, app_path());
+                $this->loadModels(app_path($root . DIRECTORY_SEPARATOR .  "{$file->getFileName()}"), $models);
             }
 
             if (($ext = $file->getExtension()) === 'php') {
                 $basePath = str_replace(app_path(), '', $file->getPathName());
                 $namespace = str_replace('.' . $ext, '', 'App' . $basePath);
 
-                if (is_subclass_of($namespace, Model::class) && Arr::has(class_uses($namespace), Commentable::class)) {
-                    $key = str($namespace)->afterLast('App\\Models\\')->studly()->value();
+                if (is_subclass_of($namespace, Model::class) && is_subclass_of($namespace, CommentableContract::class)) {
+                    $key = str($namespace)->afterLast('App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR)->studly()->value();
                     $models[$key]['count'] = 0;
                     $models[$key]['instance'] = new $namespace();
                 }

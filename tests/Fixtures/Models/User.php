@@ -1,6 +1,6 @@
 <?php
 
-namespace LakM\CommentsAdminPanel\Tests\Fixtures;
+namespace LakM\CommentsAdminPanel\Tests\Fixtures\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

@@ -11,12 +11,12 @@
 |
 */
 
-use LakM\CommentsAdminPanel\Tests\Fixtures\User;
+use LakM\CommentsAdminPanel\Tests\Fixtures\Models\User;
 use LakM\CommentsAdminPanel\Tests\TestCase;
 
 use function Pest\Laravel\actingAs;
 
-uses(TestCase::class)->in('Feature');
+uses(TestCase::class)->in('Feature', 'Unit');
 
 function actAsAuth(): User
 {
