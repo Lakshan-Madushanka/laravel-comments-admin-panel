@@ -9,9 +9,9 @@ it('can scan all the commentable models', function () {
 
     $this->app->useAppPath(__DIR__ . DIRECTORY_SEPARATOR . '../');
 
-    $path = app_path( DIRECTORY_SEPARATOR . 'Fixtures' . DIRECTORY_SEPARATOR . 'Models');
+    $path = app_path(DIRECTORY_SEPARATOR . 'Fixtures' . DIRECTORY_SEPARATOR . 'Models');
 
 
     dd($ob->getModels($path));
-});
+})->todo();
 

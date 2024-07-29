@@ -26,7 +26,7 @@ trait HasCommentableModels
 
             if ($file->isDir()) {
                 $root = Str::after($path, app_path());
-                $this->loadModels(app_path($root . DIRECTORY_SEPARATOR .  "{$file->getFileName()}"), $models);
+                $this->loadModels(app_path($root . DIRECTORY_SEPARATOR . "{$file->getFileName()}"), $models);
             }
 
             if (($ext = $file->getExtension()) === 'php') {

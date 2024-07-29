@@ -2,11 +2,11 @@
 
 namespace LakM\CommentsAdminPanel\Tests\Fixtures\Models\Blog;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use LakM\Comments\Concerns\Commentable;
 use LakM\Comments\Contracts\CommentableContract;
 
-class Tag extends Authenticatable implements CommentableContract
+class Tag extends Model implements CommentableContract
 {
     use Commentable;
 
