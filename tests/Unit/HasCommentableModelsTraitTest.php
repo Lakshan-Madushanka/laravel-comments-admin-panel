@@ -3,7 +3,7 @@
 use LakM\CommentsAdminPanel\Livewire\Admin\Concerns\HasCommentableModels;
 
 it('can scan all the commentable models', function () {
-    $ob = new class {
+    $ob = new class () {
         use HasCommentableModels;
     };
 
@@ -14,4 +14,3 @@ it('can scan all the commentable models', function () {
 
     dd($ob->getModels($path));
 })->todo();
-

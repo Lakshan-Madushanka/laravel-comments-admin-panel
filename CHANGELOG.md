@@ -1,5 +1,9 @@
 # Documentation of the changes
 
+## 1.0.2 - 2024-07-30
+* Fix: Unable to identify models inside directories nested more than one level deep. See #2.
+* [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.0.1...1.0.2)
+
 ## 1.0.1 - 2024-07-27
 - Make composer dependencies stable
 - [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.0.0...1.0.1)
