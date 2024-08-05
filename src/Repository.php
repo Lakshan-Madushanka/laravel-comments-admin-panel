@@ -5,7 +5,7 @@ namespace LakM\CommentsAdminPanel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use LakM\Comments\Model as M;
+use LakM\Comments\ModelResolver;
 use LakM\Comments\Models\Comment;
 
 class Repository
@@ -14,7 +14,7 @@ class Repository
     {
         $alias = $model->getMorphClass();
 
-        return M::commentQuery()->where('commentable_type', $alias)->count();
+        return ModelResolver::commentQuery()->where('commentable_type', $alias)->count();
     }
 
     public static function commentsOf(Model $model)
@@ -36,7 +36,7 @@ class Repository
     {
         $alias = $model->getMorphClass();
 
-        return M::commentQuery()
+        return ModelResolver::commentQuery()
             ->selectRaw('*, count(1) as comments_count')
             ->where('commentable_type', $alias)
             ->groupBy('commentable_type', 'commentable_id');
