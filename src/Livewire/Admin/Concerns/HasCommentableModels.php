@@ -36,7 +36,7 @@ trait HasCommentableModels
     private function validateModels(array $models): void
     {
         foreach ($models as $model) {
-            Helpers::checkCommentableModelValidity(new $model);
+            Helpers::checkCommentableModelValidity(new $model());
         }
     }
 
