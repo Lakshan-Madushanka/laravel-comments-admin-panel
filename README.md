@@ -4,14 +4,14 @@
 
 ***Admin panel for the [commenter](https://github.com/Lakshan-Madushanka/laravel-comments)***
 
-[Description](##description) |
+[Description](#description) |
 [Requirements](#requirements) |
 [Installation](#installation) |
-[Usage](##usage) |
-[Config](##config) |
-[Authoriztion](##authoriztion) |
-[Model Discovery](##models-discovery)
-[Route](##route) |
+[Usage](#usage) |
+[Config](#config) |
+[Authoriztion](#authorization) |
+[Models Discovery](#models-discovery) |
+[Route](#route) |
 [Customization](#customization) |
 [Changelog](#changelog) |
 [Security](#security) |
