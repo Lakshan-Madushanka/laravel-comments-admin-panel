@@ -4,11 +4,13 @@
 
 ***Admin panel for the [commenter](https://github.com/Lakshan-Madushanka/laravel-comments)***
 
-[Description](#description) |
+[Description](##description) |
 [Requirements](#requirements) |
 [Installation](#installation) |
-[Usage](#usage) |
-[Config](#config) |
+[Usage](##usage) |
+[Config](##config) |
+[Authoriztion](##authoriztion) |
+[Route](##route) |
 [Customization](#customization) |
 [Changelog](#changelog) |
 [Security](#security) |
@@ -20,13 +22,13 @@
 
 </div>
 
-# Description
+## Description
 
 Provides an ideal admin panel to manage the [Commenter package](https://github.com/Lakshan-Madushanka/laravel-comments).
 
 <img src="https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/assets/47297673/49bc9302-abe1-488e-a035-1c8571dfeae7" width="800">
 
-# Requirements
+## Requirements
 
 - **PHP** : ^8.1 | ^8.2 | ^8.3
 - **laravel/framework** : ^ 10.0 | ^11.0
@@ -34,7 +36,7 @@ Provides an ideal admin panel to manage the [Commenter package](https://github.c
 - **filament/notifications** : ^3.2
 - **filament/tables** : ^3.2
 
-# Installation
+## Installation
 
 ```bash
     composer require lakm/laravel-comments-admin-panel -W
@@ -52,11 +54,11 @@ You can publish views using below command.
     php artisan vendor:publish --tag=comments-admin-panel-resources
 ```
 
-# Usage
+## Usage
 
 All you need to do is navigate to the package's default route end point `/admin/comments/dashboard`
 
-# Config
+## Config
 
 Config file is published as `comments-admin-panel.php` in the config directory.
 
@@ -112,14 +114,17 @@ middleware.
 > [!Note]
 > Don't forget to set ``'enabled' => true`` in the config file.
 
-### Route Prefix
+## Route
+You can access to the admin panel visiting default route end point `/admin/comments/dashboard` 
+
+### Prefix
 
 By default, **admin** prefix is added to package's routes you can change it as following example.
 
 ```php
 'routes' => ['prefix' => 'admin'],
 ```
-### Route Middlewares
+### Middlewares
 
 By default, `web` and `AdminPanelAccessMiddleware::class` middlewares are applied you can change it as following example.
 
@@ -142,7 +147,7 @@ You can customize all the views by publishing them using below commands,
 This will publish views to the ``\resources\views\comments-admin-panel`` directory.
 
 ### Assets
-Package install command `comments-admin-panel:install`, publish assets to the `\public\vendor\lakm\comments-admin-panel` directory.
+Package's install command `comments-admin-panel:install`, publish assets to the `\public\vendor\lakm\comments-admin-panel` directory.
 
 Here is the command to publish them manually.
 
