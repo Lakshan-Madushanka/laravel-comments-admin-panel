@@ -2,6 +2,7 @@
 
 ## 1.1.1 - 2024-08-06
 * Fix sidebar content overflow issue (UI)
+* [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.1.0...1.1.1)
   
 ## 1.1.0 - 2024-08-06
 * Bug fix: Config publish to `comments.php` instead `comments-admin-panel.php`
