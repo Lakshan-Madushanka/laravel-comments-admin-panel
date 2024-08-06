@@ -38,12 +38,12 @@
            @foreach($models as $key => $model)
                 <div
                     wire:click="navigate('{{$key}}')"
-                    class="bg-gray-200 p-2 mb-4 flex justify-between items-center rounded cursor-pointer hover:bg-gray-300"
+                    class="bg-gray-200 p-2 mb-4 flex gap-x-2 justify-between items-center rounded cursor-pointer hover:bg-gray-300"
                     :class="'{{$this->getModelRoute($key)}}' === window.location.href ? 'border-l-4 border-gray-500' : ''"
                     :key="$key"
                 >
-                    <span>{!! str($key)->replace('\\', "&rarr;")->plural() !!}</span>
-                    <span><x-comments-admin-panel::chip class="text-sm">{{$model['count']}}</x-comments-admin-panel::chip></span>
+                    <div class="!w-[85%] overflow-auto">{!! str($key)->replace('\\', "&rarr;")->plural() !!}</div>
+                    <div class="flex-1"><x-comments-admin-panel::chip class="text-sm">{{$model['count']}}</x-comments-admin-panel::chip></div>
                 </div>
            @endforeach
        </div>
