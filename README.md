@@ -10,6 +10,7 @@
 [Usage](##usage) |
 [Config](##config) |
 [Authoriztion](##authoriztion) |
+[Model Discovery](##models-discovery)
 [Route](##route) |
 [Customization](#customization) |
 [Changelog](#changelog) |
@@ -85,6 +86,11 @@ return [
             ],
             'prefix' => 'admin',
         ],
+        /**
+         * Commentable models(must implement CommentableContract) that the admin panel must track
+         * Keep empty to use models auto-discovery
+         */
+        'commentable_models' => [],
 ];
 ```
 
@@ -113,6 +119,19 @@ middleware.
 
 > [!Note]
 > Don't forget to set ``'enabled' => true`` in the config file.
+
+## Models Discovery
+
+By default, package scan all the commentable models in `App/Models` namespace. You can change this
+behaviour by explicitly defining models you want admin panel to track.
+
+```php
+
+//config/comments-admin-panel.php
+return [
+    'commentable_models' => [Post::class], // Admin panel only track for post class
+]
+```
 
 ## Route
 You can access to the admin panel visiting default route end point `/admin/comments/dashboard` 
