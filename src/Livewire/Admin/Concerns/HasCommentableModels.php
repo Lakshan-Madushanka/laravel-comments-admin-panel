@@ -5,16 +5,56 @@ namespace LakM\CommentsAdminPanel\Livewire\Admin\Concerns;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use LakM\Comments\Contracts\CommentableContract;
+use LakM\Comments\Helpers;
 use LakM\CommentsAdminPanel\Repository;
 
 trait HasCommentableModels
 {
+    /** @throws \Throwable */
     public function getModels(string $modelPath): array
     {
-        $models = $this->loadModels($modelPath);
+        /** @var array<int, class-string> $models */
+        $models = config('comments-admin-panel.commentable_models');
+
+        if (count($models) > 0) {
+            $this->validateModels($models);
+            $models = $this->prepareModels($models);
+        } else {
+            $models = $this->loadModels($modelPath);
+        }
+
         $this->setCommentCount($models);
 
         return $models;
+    }
+
+
+    /**
+     * @param array $models
+     * @throws \Throwable
+     */
+    private function validateModels(array $models): void
+    {
+        foreach ($models as $model) {
+            Helpers::checkCommentableModelValidity(new $model);
+        }
+    }
+
+    private function prepareModels(array $models): array
+    {
+        $preparedModels = [];
+
+        foreach ($models as $model) {
+            $key = str($model)
+                ->afterLast('App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR)
+                ->studly()
+                ->value();
+
+            $preparedModels[$key]['count'] = 0;
+            $preparedModels[$key]['instance'] = new $model();
+        }
+
+        return $preparedModels;
     }
 
     private function loadModels(string $path, array &$models = []): array
@@ -34,7 +74,11 @@ trait HasCommentableModels
                 $namespace = str_replace('.' . $ext, '', 'App' . $basePath);
 
                 if (is_subclass_of($namespace, Model::class) && is_subclass_of($namespace, CommentableContract::class)) {
-                    $key = str($namespace)->afterLast('App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR)->studly()->value();
+                    $key = str($namespace)
+                        ->afterLast('App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR)
+                        ->studly()
+                        ->value();
+
                     $models[$key]['count'] = 0;
                     $models[$key]['instance'] = new $namespace();
                 }

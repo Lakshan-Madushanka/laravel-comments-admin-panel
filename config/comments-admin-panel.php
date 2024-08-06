@@ -12,4 +12,10 @@ return [
             ],
             'prefix' => 'admin',
         ],
+
+    /**
+     * Commentable models(must implement CommentableContract) that the admin panel must track
+     * Keep empty to use models auto-discovery
+     */
+    'commentable_models' => [],
 ];
