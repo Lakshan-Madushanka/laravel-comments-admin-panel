@@ -78,7 +78,7 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
     public function configPublishing(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/comments-admin-panel.php' => config_path('comments.php')
+            __DIR__ . '/../config/comments-admin-panel.php' => config_path('comments-admin-panel.php')
         ], 'comments-admin-panel-config');
 
         $this->publishes([
