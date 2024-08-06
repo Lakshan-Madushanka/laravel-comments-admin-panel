@@ -1,7 +1,13 @@
 # Documentation of the changes
 
-## 1.0.3 - 2024-05-08
-* Fix bug [#4](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.0.2...1.0.3) 
+## 1.1.0 - 2024-08-06
+* Bug fix: Config publish to `comments.php` instead `comments-admin-panel.php`
+* Feature: Ability to explicitly define commentable models that admin panel should track [#5](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/issues/5).
+* Fix heading sizes and some other bugs and improvements in README.md
+* [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.0.3...1.1.0)
+
+## 1.0.3 - 2024-08-05
+* Fix bug [#4](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/issues/4)
 * [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.0.2...1.0.3)
 
 ## 1.0.2 - 2024-07-30
