@@ -1,5 +1,8 @@
 # Documentation of the changes
 
+## 1.1.1 - 2024-08-06
+* Fix sidebar content overflow issue (UI)
+  
 ## 1.1.0 - 2024-08-06
 * Bug fix: Config publish to `comments.php` instead `comments-admin-panel.php`
 * Feature: Ability to explicitly define commentable models that admin panel should track [#5](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/issues/5).
