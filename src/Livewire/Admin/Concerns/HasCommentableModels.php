@@ -11,16 +11,23 @@ use LakM\CommentsAdminPanel\Repository;
 trait HasCommentableModels
 {
     /** @throws \Throwable */
-    public function getModels(string $modelPath): array
+    public function getModels(string $modelPath, string $modelNamespace = '', string $modelRootNamespace = ''): array
     {
         /** @var array<int, class-string> $models */
         $models = config('comments-admin-panel.commentable_models');
 
+        $modelNamespace = $this->getModelNamespace($modelNamespace);
+        $modelRootNamespace = $this->getModelRootNamespace($modelNamespace, $modelRootNamespace);
+
         if (count($models) > 0) {
             $this->validateModels($models);
-            $models = $this->prepareModels($models);
+            $models = $this->prepareModels($models, $modelNamespace);
         } else {
-            $models = $this->loadModels($modelPath);
+            $models = $this->loadModels(
+                path: $modelPath,
+                modelNamespace: $modelNamespace,
+                modelRootNamespace: $modelRootNamespace
+            );
         }
 
         $this->setCommentCount($models);
@@ -28,25 +35,50 @@ trait HasCommentableModels
         return $models;
     }
 
+    public function getModelNamespace(string $modelNamespace): string
+    {
+        if (empty($modelNamespace)) {
+            $modelNamespace = 'App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR;
+        }
+
+        if (!Str::endsWith($modelNamespace, DIRECTORY_SEPARATOR)) {
+            $modelNamespace .= DIRECTORY_SEPARATOR;
+        }
+
+        return $modelNamespace;
+    }
+
+    public function getModelRootNamespace(string $modelNamespace, string $modelRootNamespace): string
+    {
+        if (empty($modelRootNamespace)) {
+            $modelRootNamespace = Str::before($modelNamespace, DIRECTORY_SEPARATOR);
+        }
+
+        if (Str::endsWith($modelRootNamespace, DIRECTORY_SEPARATOR)) {
+            $modelRootNamespace = Str::replaceLast(DIRECTORY_SEPARATOR, '', $modelRootNamespace);
+        }
+
+        return $modelRootNamespace;
+    }
 
     /**
-     * @param array $models
+     * @param  array  $models
      * @throws \Throwable
      */
-    private function validateModels(array $models): void
+    public function validateModels(array $models): void
     {
         foreach ($models as $model) {
             Helpers::checkCommentableModelValidity(new $model());
         }
     }
 
-    private function prepareModels(array $models): array
+    public function prepareModels(array $models, string $modelNamespace): array
     {
         $preparedModels = [];
 
         foreach ($models as $model) {
             $key = str($model)
-                ->afterLast('App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR)
+                ->afterLast($modelNamespace)
                 ->studly()
                 ->value();
 
@@ -57,38 +89,39 @@ trait HasCommentableModels
         return $preparedModels;
     }
 
-    private function loadModels(string $path, array &$models = []): array
-    {
-        foreach (new \DirectoryIterator($path) as $file) {
-            if ($file->isDot()) {
+    public function loadModels(
+        string $path,
+        string $modelNamespace,
+        string $modelRootNamespace,
+        array &$models = []
+    ): array {
+        $directory = new \RecursiveDirectoryIterator($path);
+        $iterator = new \RecursiveIteratorIterator($directory);
+
+        /** @var \SplFileInfo $file */
+        foreach ($iterator as $pathName => $file) {
+            if (!$file->isFile() || $file->getExtension() !== 'php') {
                 continue;
             }
 
-            if ($file->isDir()) {
-                $root = Str::after($path, app_path());
-                $this->loadModels(app_path($root . DIRECTORY_SEPARATOR . "{$file->getFileName()}"), $models);
-            }
+            $basePath = str_replace(app_path(), '', $pathName);
+            $namespace = str_replace('.php', '', $modelRootNamespace . $basePath);
 
-            if (($ext = $file->getExtension()) === 'php') {
-                $basePath = str_replace(app_path(), '', $file->getPathName());
-                $namespace = str_replace('.' . $ext, '', 'App' . $basePath);
+            if (is_subclass_of($namespace, Model::class) && is_subclass_of($namespace, CommentableContract::class)) {
+                $key = str($namespace)
+                    ->afterLast($modelNamespace)
+                    ->studly()
+                    ->value();
 
-                if (is_subclass_of($namespace, Model::class) && is_subclass_of($namespace, CommentableContract::class)) {
-                    $key = str($namespace)
-                        ->afterLast('App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR)
-                        ->studly()
-                        ->value();
-
-                    $models[$key]['count'] = 0;
-                    $models[$key]['instance'] = new $namespace();
-                }
+                $models[$key]['count'] = 0;
+                $models[$key]['instance'] = new $namespace();
             }
         }
 
         return $models;
     }
 
-    private function setCommentCount(array &$models): void
+    public function setCommentCount(array &$models): void
     {
         foreach ($models as $key => $model) {
             $models[$key]['count'] = Repository::commentsCountOf($model['instance']);
