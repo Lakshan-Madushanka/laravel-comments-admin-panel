@@ -34,6 +34,21 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             $table->string('email')->nullable();
             $table->timestamps();
         });
+
+        $schema->create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->nullableMorphs('commentable');
+            $table->nullableMorphs('commenter');
+            $table->unsignedBigInteger('reply_id')->nullable()->index();
+
+            $table->text('text');
+            $table->string('guest_name')->nullable()->index();
+            $table->string('guest_email')->nullable()->index();
+            $table->boolean('approved')->default(false)->index();
+            $table->string('ip_address')->nullable()->index();
+
+            $table->timestamps();
+        });
     }
     protected function getPackageProviders($app): array
     {
