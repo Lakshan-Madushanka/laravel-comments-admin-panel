@@ -1,5 +1,11 @@
 # Documentation of the changes
 
+## 1.1.2 - 2024-08-08
+* Fix: Commentable models auto discovery not working in linux based sysyems
+* Replace `DirectoryIterator` with `RecursiveDirectoryIterator` and improve `HasCommentableModels` trait
+* Properly test `HasCommentableModels` trait
+* [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.1.2...1.1.1)
+  
 ## 1.1.1 - 2024-08-06
 * Fix sidebar content overflow issue (UI)
 * [Full Changelog](https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.1.0...1.1.1)
