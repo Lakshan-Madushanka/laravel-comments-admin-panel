@@ -38,11 +38,11 @@ trait HasCommentableModels
     public function getModelNamespace(string $modelNamespace): string
     {
         if (empty($modelNamespace)) {
-            $modelNamespace = 'App' . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR;
+            $modelNamespace = 'App\Models\\';
         }
 
-        if (!Str::endsWith($modelNamespace, DIRECTORY_SEPARATOR)) {
-            $modelNamespace .= DIRECTORY_SEPARATOR;
+        if (!Str::endsWith($modelNamespace, '\\')) {
+            $modelNamespace .= '\\';
         }
 
         return $modelNamespace;
@@ -51,11 +51,11 @@ trait HasCommentableModels
     public function getModelRootNamespace(string $modelNamespace, string $modelRootNamespace): string
     {
         if (empty($modelRootNamespace)) {
-            $modelRootNamespace = Str::before($modelNamespace, DIRECTORY_SEPARATOR);
+            $modelRootNamespace = Str::before($modelNamespace, '\\');
         }
 
-        if (Str::endsWith($modelRootNamespace, DIRECTORY_SEPARATOR)) {
-            $modelRootNamespace = Str::replaceLast(DIRECTORY_SEPARATOR, '', $modelRootNamespace);
+        if (Str::endsWith($modelRootNamespace, '\\')) {
+            $modelRootNamespace = Str::replaceLast('\\', '', $modelRootNamespace);
         }
 
         return $modelRootNamespace;
@@ -105,7 +105,7 @@ trait HasCommentableModels
             }
 
             $basePath = str_replace(app_path(), '', $pathName);
-            $namespace = str_replace('.php', '', $modelRootNamespace . $basePath);
+            $namespace = str_replace('/', '\\', str_replace('.php', '', $modelRootNamespace . $basePath));
 
             if (is_subclass_of($namespace, Model::class) && is_subclass_of($namespace, CommentableContract::class)) {
                 $key = str($namespace)
@@ -117,7 +117,6 @@ trait HasCommentableModels
                 $models[$key]['instance'] = new $namespace();
             }
         }
-
         return $models;
     }
 

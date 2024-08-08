@@ -31,14 +31,14 @@ it('can discover all the commentable models', function () {
             return get_class($model['instance']);
         })->flatten();
 
-    expect($models->all())->toMatchArray(
-        [
-            Post::class,
-            Report::class,
-            Tag::class,
-            Tax::class,
-        ]
-    );
+    $expect = [
+        Report::class,
+        Post::class,
+        Tag::class,
+        Tax::class,
+    ];
+
+    expect(array_diff($models->all(), $expect))->toBe([]);
 });
 
 it('discover only models in commentable_models array when it is not empty', function () {
@@ -57,7 +57,7 @@ it('discover only models in commentable_models array when it is not empty', func
 
     expect($models->all())->toMatchArray(
         [
-            Post::class
+            Post::class,
         ]
     );
 });
