@@ -86,7 +86,7 @@ class CommentsAdminPanelServiceProvider extends ServiceProvider
         ], 'comments-admin-panel-assets');
 
         $this->publishes([
-            __DIR__ . '/../resources' => public_path('vendor/comments-admin-panel')
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/comments-admin-panel')
         ], 'comments-admin-panel-resources');
     }
 
