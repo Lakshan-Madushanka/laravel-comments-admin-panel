@@ -1,5 +1,13 @@
 # Documentation of the changes
 
+## 1.1.4 - 2024-09-24
+
+### What's Changed
+
+* Fix: Resources are published to invalid path by @Lakshan-Madushanka in https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/pull/7
+
+**Full Changelog**: https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.1.2...1.1.4
+
 ## 1.1.3 - 2024-09-23
 
 ### What's Changed
