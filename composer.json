@@ -23,7 +23,7 @@
         "laravel/framework": ">=10.0",
         "filament/notifications": "^3.2",
         "filament/tables": "^3.2"
-    },
+    },`
     "require-dev": {
         "blade-ui-kit/blade-heroicons": "^2.6",
         "larastan/larastan": "2.*",

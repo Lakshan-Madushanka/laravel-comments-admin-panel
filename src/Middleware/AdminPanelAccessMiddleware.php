@@ -32,7 +32,7 @@ class AdminPanelAccessMiddleware
             return true;
         }
 
-        $authGuard = config('comments.auth_guard') === 'default' ? Auth::getDefaultDriver() : config('comments.auth_guard');
+        $authGuard = config('commenter.auth_guard') === 'default' ? Auth::getDefaultDriver() : config('commenter.auth_guard');
 
         $user = Auth::guard($authGuard)->user();
 

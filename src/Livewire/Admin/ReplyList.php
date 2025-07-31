@@ -101,7 +101,7 @@ class ReplyList extends Component implements HasTable, HasForms
     {
         $reactions = [];
 
-        foreach (config('comments.reactions') as $key => $value) {
+        foreach (config('commenter.reactions') as $key => $value) {
             $reactions[] = TextColumn::make(Str::plural($key) . '_count')->sortable();
         }
 
