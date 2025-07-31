@@ -28,11 +28,11 @@
                 </div>
                 <div class="flex justify-between items-center">
                     <span>Limits Per User</span>
-                    <x-comments-admin-panel::chip class="!px-2 !py-0 bg-green-500">{{is_null(config('comments.limit')) ? 'Unlimited' : config('comments.limit')}}</x-comments-admin-panel::chip>
+                    <x-comments-admin-panel::chip class="!px-2 !py-0 bg-green-500">{{is_null(config('commenter.limit')) ? 'Unlimited' : config('commenter.limit')}}</x-comments-admin-panel::chip>
                 </div>
                 <div class="flex justify-between items-center">
                     <span>Repliable</span>
-                    <x-comments-admin-panel::chip class="!px-2 !py-0 bg-green-500">{{config('comments.reply.enabled') ? 'True' : 'False'}}</x-comments-admin-panel::chip>
+                    <x-comments-admin-panel::chip class="!px-2 !py-0 bg-green-500">{{config('commenter.reply.enabled') ? 'True' : 'False'}}</x-comments-admin-panel::chip>
                 </div>
             </div>
         @endforeach
