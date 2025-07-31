@@ -25,6 +25,7 @@
         "filament/tables": "^3.2"
     },
     "require-dev": {
+        "blade-ui-kit/blade-heroicons": "^2.6",
         "larastan/larastan": "2.*",
         "orchestra/testbench": "8.*",
         "pestphp/pest": "^2.34",
