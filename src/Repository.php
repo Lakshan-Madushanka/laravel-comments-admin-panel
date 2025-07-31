@@ -5,8 +5,8 @@ namespace LakM\CommentsAdminPanel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use LakM\Comments\ModelResolver;
-use LakM\Comments\Models\Comment;
+use LakM\Commenter\ModelResolver;
+use LakM\Commenter\Models\Comment;
 
 class Repository
 {
@@ -56,7 +56,7 @@ class Repository
     {
         $count = [];
 
-        foreach (array_keys(config('comments.reactions')) as $reaction) {
+        foreach (array_keys(config('commenter.reactions')) as $reaction) {
             $name = Str::plural($reaction);
             $key = "reactions as {$name}_count";
             $count[$key] = function (Builder $query) use ($reaction) {
