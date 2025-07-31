@@ -1,5 +1,9 @@
 # Documentation of the changes
 
+## 2.0.1 - 2025-07-31
+
+**Full Changelog**: https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/2.0.0...2.0.1
+
 ## 2.0.0
 
 ### What's Changed
@@ -8,7 +12,6 @@
 * feat (ui): icon to navigate on dashboard tile by @Lakshan-Madushanka in #13
 * feat: add laravel 12 support by @Lakshan-Madushanka in #14
 * Full Changelog: https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/1.1.5...2.0.0
-
 
 ## 1.1.4 - 2024-09-24
 
