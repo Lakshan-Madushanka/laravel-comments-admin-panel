@@ -13,7 +13,7 @@ use GrahamCampbell\Security\Facades\Security;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use LakM\Comments\Models\Comment;
+use LakM\Commenter\Models\Comment;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 

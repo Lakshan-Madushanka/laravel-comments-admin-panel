@@ -75,7 +75,7 @@ This will publish following config file
 //config/comments-admin-panel.php
 <?php
 
-use LakM\Comments\AdminPanel\Middleware\AdminPanelAccessMiddleware;
+use LakM\CommentsAdminPanel\Middleware\AdminPanelAccessMiddleware;
 
 return [
         'enabled' => true,
