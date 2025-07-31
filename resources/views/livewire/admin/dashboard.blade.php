@@ -10,7 +10,10 @@
     <div class="flex gap-x-12 gap-y-4 flex-wrap">
         @foreach($models as $key => $model)
             <div class="flex flex-col gap-y-4 rounded border w-full lg:w-auto lg:min-w-96 p-2 shadow">
-                <span class="font-bold text-lg">{!! Str::replace('\\', "&rarr;", $key) !!}</span>
+                <div class="flex justify-between">
+                    <span class="font-bold text-lg">{!! Str::replace('\\', "&rarr;", $key) !!}</span>
+                    <span wire:click="navigate('{{$key}}')" class="hover:cursor-pointer"><x-heroicon-c-eye class="h-6 w-6 text-blue-600" /></span>
+                </div>
                 <div class="flex justify-between items-center">
                     <span>Total Comments</span>
                     <x-comments-admin-panel::chip class="!px-2 !py-0 bg-green-500">{{$model['count']}}</x-comments-admin-panel::chip>
