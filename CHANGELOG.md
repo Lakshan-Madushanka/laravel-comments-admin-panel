@@ -1,5 +1,13 @@
 # Documentation of the changes
 
+## 2.0.2 - 2025-07-31
+
+### What's Changed
+
+* fix: namespace issues by @Lakshan-Madushanka in https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/pull/16
+
+**Full Changelog**: https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/2.0.1...2.0.2
+
 ## 2.0.1 - 2025-07-31
 
 **Full Changelog**: https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/2.0.0...2.0.1
