@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use LakM\Comments\Models\Comment;
+use LakM\Commenter\Models\Comment;
 use LakM\CommentsAdminPanel\Repository;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -117,7 +117,7 @@ class CommentList extends Component implements HasTable, HasForms
     {
         $reactions = [];
 
-        foreach (config('comments.reactions') as $key => $value) {
+        foreach (config('commenter.reactions') as $key => $value) {
             $reactions[] = TextColumn::make(Str::plural($key) . '_count')
                 ->toggleable()
                 ->sortable();

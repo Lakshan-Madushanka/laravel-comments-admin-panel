@@ -4,7 +4,7 @@ namespace LakM\CommentsAdminPanel\Tests;
 
 use Filament\Notifications\NotificationsServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
-use LakM\Comments\CommentServiceProvider;
+use LakM\Commenter\CommenterServiceProvider;
 use LakM\CommentsAdminPanel\CommentsAdminPanelServiceProvider;
 use Livewire\LivewireServiceProvider;
 
@@ -53,7 +53,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app): array
     {
         return [
-            CommentServiceProvider::class,
+            CommenterServiceProvider::class,
             LivewireServiceProvider::class,
             NotificationsServiceProvider::class,
             CommentsAdminPanelServiceProvider::class,

@@ -4,8 +4,8 @@ namespace LakM\CommentsAdminPanel\Livewire\Admin\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use LakM\Comments\Contracts\CommentableContract;
-use LakM\Comments\Helpers;
+use LakM\Commenter\Contracts\CommentableContract;
+use LakM\Commenter\Helpers;
 use LakM\CommentsAdminPanel\Repository;
 
 trait HasCommentableModels
