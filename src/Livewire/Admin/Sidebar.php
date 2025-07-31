@@ -5,12 +5,14 @@ namespace LakM\CommentsAdminPanel\Livewire\Admin;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use LakM\CommentsAdminPanel\Livewire\Admin\Concerns\CanNavigate;
 use LakM\CommentsAdminPanel\Livewire\Admin\Concerns\HasCommentableModels;
 use Livewire\Component;
 
 class Sidebar extends Component
 {
     use HasCommentableModels;
+    use CanNavigate;
 
     public array $models = [];
 
@@ -26,16 +28,6 @@ class Sidebar extends Component
     public function go($route): void
     {
         $this->redirect($route);
-    }
-
-    public function navigate(string $key): void
-    {
-        $this->redirect($this->getModelRoute($key));
-    }
-
-    public function getModelRoute(string $key): string
-    {
-        return route('admin.models.comments.index', ['name' => str($key)->replace('\\', '')->kebab()->plural()]);
     }
 
     public function render(): View|Factory|Application

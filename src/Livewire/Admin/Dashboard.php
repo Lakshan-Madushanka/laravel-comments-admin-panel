@@ -5,6 +5,7 @@ namespace LakM\CommentsAdminPanel\Livewire\Admin;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use LakM\CommentsAdminPanel\Livewire\Admin\Concerns\CanNavigate;
 use LakM\CommentsAdminPanel\Livewire\Admin\Concerns\HasCommentableModels;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -14,6 +15,7 @@ use Livewire\Component;
 class Dashboard extends Component
 {
     use HasCommentableModels;
+    use CanNavigate;
 
     public array $models = [];
 
