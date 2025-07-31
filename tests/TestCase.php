@@ -2,6 +2,8 @@
 
 namespace LakM\CommentsAdminPanel\Tests;
 
+use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
+use BladeUI\Icons\BladeIconsServiceProvider;
 use Filament\Notifications\NotificationsServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
 use LakM\Commenter\CommenterServiceProvider;
@@ -57,6 +59,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             LivewireServiceProvider::class,
             NotificationsServiceProvider::class,
             CommentsAdminPanelServiceProvider::class,
+            BladeIconsServiceProvider::class,
+            BladeHeroiconsServiceProvider::class,
         ];
     }
 
