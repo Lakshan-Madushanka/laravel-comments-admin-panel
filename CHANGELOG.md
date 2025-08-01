@@ -1,5 +1,13 @@
 # Documentation of the changes
 
+## 2.0.4 - 2025-08-01
+
+### What's Changed
+
+* fix: some minor bugs by @Lakshan-Madushanka in https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/pull/18
+
+**Full Changelog**: https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/compare/2.0.3...2.0.4
+
 ## 2.0.3 - 2025-07-31
 
 ### What's Changed
