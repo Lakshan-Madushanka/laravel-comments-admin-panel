@@ -34,7 +34,7 @@
         {{ $attributes->merge(["class" => $class . $severity . "inline-flex justify-between items-center gap-x-2 font-semibold rounded border border-transparent text-white disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"]) }}
     >
         <span>{{ $slot }}</span>
-        <x-comments::spin />
+        <x-commenter::spin />
     </button>
 @endif
 
@@ -61,7 +61,7 @@
             {{ $attributes->merge(["class" => $class . $severity . "inline-flex items-center gap-x-2 font-semibold rounded border border-transparent text-white disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 cursor-not-allowed"]) }}
         >
             <span>{{ $slot }}</span>
-            <x-comments::spin />
+            <x-commenter::spin />
         </button>
     </div>
 @endif

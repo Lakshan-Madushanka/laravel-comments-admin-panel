@@ -24,9 +24,9 @@
         {{ $this->form }}
 
         <div class="my-4">
-            <x-comments::button type="submit">
+            <x-commenter::button type="submit">
                 Submit
-            </x-comments::button>
+            </x-commenter::button>
         </div>
     </form>
 
