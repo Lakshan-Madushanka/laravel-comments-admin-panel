@@ -31,7 +31,7 @@ Provides an ideal admin panel to manage the [Commenter package](https://github.c
 <hr/>
 <img alt="list" src="https://github.com/user-attachments/assets/75870ac1-c7bc-4985-8f56-897b453ea903" />
 <hr/>
-<img alt="Edit Form" src="https://github.com/user-attachments/assets/c89a2947-2b26-42d1-96ad-2d8a3948892b" />
+<img alt="Edit Form" src="https://github.com/user-attachments/assets/edd5be2d-c237-4226-bcd6-5f496cba5438" />
 
 ## Requirements
 
