@@ -27,7 +27,9 @@
 
 Provides an ideal admin panel to manage the [Commenter package](https://github.com/Lakshan-Madushanka/laravel-comments).
 
-<img src="https://github.com/Lakshan-Madushanka/laravel-comments-admin-panel/assets/47297673/49bc9302-abe1-488e-a035-1c8571dfeae7" width="800">
+<img alt="Dashboard" src="https://github.com/user-attachments/assets/c89a2947-2b26-42d1-96ad-2d8a3948892b" />
+<img alt="list" src="https://github.com/user-attachments/assets/75870ac1-c7bc-4985-8f56-897b453ea903" />
+<img alt="Edit Form" src="https://github.com/user-attachments/assets/c89a2947-2b26-42d1-96ad-2d8a3948892b" />
 
 ## Requirements
 
