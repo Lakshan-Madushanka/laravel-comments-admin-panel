@@ -9,6 +9,7 @@ use Illuminate\Database\Schema\Blueprint;
 use LakM\Commenter\CommenterServiceProvider;
 use LakM\CommentsAdminPanel\CommentsAdminPanelServiceProvider;
 use Livewire\LivewireServiceProvider;
+use Mews\Purifier\PurifierServiceProvider;
 
 use function Pest\Laravel\withoutExceptionHandling;
 use function Pest\Laravel\withoutVite;
@@ -61,6 +62,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             CommentsAdminPanelServiceProvider::class,
             BladeIconsServiceProvider::class,
             BladeHeroiconsServiceProvider::class,
+            PurifierServiceProvider::class,
         ];
     }
 

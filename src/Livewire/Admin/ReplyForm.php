@@ -8,7 +8,6 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
-use GrahamCampbell\Security\Facades\Security;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,6 +15,7 @@ use LakM\Commenter\Models\Comment;
 use LakM\Commenter\Models\Reply;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use Mews\Purifier\Facades\Purifier;
 
 class ReplyForm extends Component implements HasForms
 {
@@ -44,13 +44,12 @@ class ReplyForm extends Component implements HasForms
                     ->required(),
                 RichEditor::make('text')
                     ->disableToolbarButtons(['attachFiles'])
-                    ->formatStateUsing(fn (string $state) => Security::clean($state))
+                    ->formatStateUsing(fn (string $state) => Purifier::clean($state))
                     ->label('Comment')
                     ->required(),
             ])
             ->statePath('data');
     }
-
 
     public function save(): void
     {

@@ -16,7 +16,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use LakM\Commenter\Models\Comment;
@@ -92,7 +92,7 @@ class ReplyList extends Component implements HasTable, HasForms
         return $record->reactions_count - ($record->dislikes_count * 2);
     }
 
-    private function query(): HasMany
+    private function query(): MorphMany
     {
         return Repository::repliesOf($this->comment);
     }
